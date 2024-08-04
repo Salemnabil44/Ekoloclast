@@ -2,22 +2,10 @@ Création d'une VM client
  - Sur le domaine AD
  - Avec un compte utilisateur ayant un accès SSH sur le serveur Linux
 
-### 1. Préparation de l'Infrastructure
-
-1. **Configurer un hôte d'hyperviseur (comme Hyper-V, VMware, ou VirtualBox)** :
-   - Assurez-vous que l'hôte d'hyperviseur est correctement configuré et que vous pouvez créer des machines virtuelles (VM).
-
-### 2. Création d'une VM Client
+### 1. Création d'une VM Client
 
 1. **Créer une nouvelle machine virtuelle sur l'hôte d'hyperviseur** :
-   - **Hyper-V** :
-     - Ouvrez le Gestionnaire Hyper-V.
-     - Cliquez sur "Nouvelle" puis sur "Machine Virtuelle".
-     - Suivez l'assistant pour configurer la VM (nom, emplacement, génération, mémoire, disque dur virtuel, etc.).
-   - **VMware** :
-     - Ouvrez le VMware vSphere Client.
-     - Cliquez sur "Create a New Virtual Machine".
-     - Suivez l'assistant pour configurer la VM.
+
    - **VirtualBox** :
      - Ouvrez VirtualBox.
      - Cliquez sur "New".
@@ -27,7 +15,7 @@ Création d'une VM client
    - Insérez le média d'installation de votre système d'exploitation (par exemple, Windows 10, Ubuntu, etc.).
    - Démarrez la VM et suivez les instructions pour installer le système d'exploitation.
 
-### 3. Joindre la VM au Domaine AD
+### 2. Joindre la VM au Domaine AD
 
 1. **Configurer les paramètres réseau** :
    - Assurez-vous que la VM peut communiquer avec le contrôleur de domaine (DC).
@@ -50,7 +38,7 @@ Création d'une VM client
        sudo realm join --user=admin_user ekoloclast.lan
        ```
 
-### 4. Créer un Compte Utilisateur sur le Domaine AD
+### 3. Créer un Compte Utilisateur sur le Domaine AD
 
 1. **Utiliser le Gestionnaire Utilisateurs et Ordinateurs Active Directory (ADUC)** :
    - Ouvrez "Utilisateurs et Ordinateurs Active Directory".
@@ -59,7 +47,7 @@ Création d'une VM client
    - Remplissez les informations requises (nom, nom d'utilisateur, mot de passe, etc.).
    - Assurez-vous que l'utilisateur est configuré pour ne pas changer son mot de passe lors de la première connexion si vous le souhaitez.
 
-### 5. Configurer l'Accès SSH sur le Serveur Linux
+### 4. Configurer l'Accès SSH sur le Serveur Linux
 
 1. **Installer et configurer OpenSSH sur le serveur Linux** :
    - Installez OpenSSH :
@@ -92,7 +80,7 @@ Création d'une VM client
      sudo systemctl restart ssh
      ```
 
-### 6. Test de la Configuration
+### 5. Test de la Configuration
 
 1. **Tester la connexion SSH** :
    - Depuis la VM ou une autre machine ayant accès au serveur Linux, essayez de vous connecter via SSH avec les informations d'identification AD :
