@@ -1,5 +1,3 @@
-Voici les étapes détaillées pour créer et configurer les GPOs mentionnées :
-
 ### 1. Fond d'écran
 
 1. Ouvrez la console de gestion des stratégies de groupe (GPMC).
