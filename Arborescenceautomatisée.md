@@ -57,6 +57,7 @@ En suivant ces étapes, vous devriez pouvoir convertir votre fichier XLSX en CSV
 
 Nous allons vérifier que le fichier CSV est bien lisible, Ce script PowerShell est conçu pour lire les données d'un fichier CSV, afficher ces données, et les stocker potentiellement dans un dictionnaire pour un traitement ultérieur. Voici une explication détaillée de chaque section du script :
 
+```
 # Charger le module Active Directory
 # Import-Module ActiveDirectory
 
@@ -97,6 +98,7 @@ foreach ($key in $dictionary.Keys) {
         Write-Host " $col : $($dictionary[$key][$col])"
     }
 }
+```
 
 Vérifier que le chemin vers le fichier csv est correct avant de lancer le script. En lançant le script vous devriez avoir ce résultat 
 
