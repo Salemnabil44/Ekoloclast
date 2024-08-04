@@ -53,7 +53,7 @@ Assurez-vous que vous êtes dans le bon répertoire où se trouve votre script P
 
 En suivant ces étapes, vous devriez pouvoir convertir votre fichier XLSX en CSV directement depuis un terminal.
 
-### 3.1.2
+### 3.1.2 Vérification fichier CSV
 
 Nous allons vérifier que le fichier CSV est bien lisible, Ce script PowerShell est conçu pour lire les données d'un fichier CSV, afficher ces données, et les stocker potentiellement dans un dictionnaire pour un traitement ultérieur. Voici une explication détaillée de chaque section du script :
 
