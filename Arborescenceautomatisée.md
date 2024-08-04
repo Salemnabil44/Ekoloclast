@@ -160,3 +160,83 @@ foreach ($entry in $data) {
 4. Exécutez le script.
 
 Le script vérifiera l'existence des OUs avant de les créer pour éviter les doublons et respectera la casse insensible pour les noms des sites et des départements.
+
+### 3.1.4 Création des utilisateurs 
+
+Il est tout à fait possible de créer des utilisateurs dans Active Directory à partir des données contenues dans votre fichier CSV. Pour cela, vous devez inclure des informations supplémentaires pour chaque utilisateur, telles que leur nom de connexion, leur mot de passe, et d'autres attributs nécessaires.
+
+Le script suivant vous créera les utilisateurs 
+
+```powershell
+# Importer les données du fichier CSV
+$csvPath = "C:\Users\Administrateur\Downloads\Annexe.csv"
+$data = Import-Csv -Path $csvPath
+
+# Fonction pour créer une OU si elle n'existe pas déjà
+function Create-OUIfNotExists {
+    param (
+        [string]$OUName,
+        [string]$ParentOU
+    )
+    
+    # Construire le chemin LDAP complet pour l'OU
+    $ouPath = "OU=$OUName,$ParentOU"
+    
+    # Vérifier si l'OU existe
+    $ouExists = Get-ADOrganizationalUnit -Filter "DistinguishedName -eq '$ouPath'" -ErrorAction SilentlyContinue
+    
+    if (-not $ouExists) {
+        # Créer l'OU si elle n'existe pas
+        New-ADOrganizationalUnit -Name $OUName -Path $ParentOU
+        Write-Host "Création de l'OU: $OUName sous $ParentOU"
+    } else {
+        Write-Host "L'OU: $OUName existe déjà sous $ParentOU"
+    }
+}
+
+# Définir le chemin racine où les OU seront créées
+$rootPath = "DC=ekoloclast,DC=lan"  # Chemin LDAP de votre domaine
+
+# Parcourir chaque ligne du fichier CSV
+foreach ($entry in $data) {
+    $site = $entry.Site.ToUpper()
+    $departement = $entry.Département.ToUpper()
+    
+    # Créer l'OU pour le site
+    Create-OUIfNotExists -OUName $site -ParentOU $rootPath
+    
+    # Créer l'OU pour le département sous l'OU du site
+    $siteOUPath = "OU=$site,$rootPath"
+    Create-OUIfNotExists -OUName $departement -ParentOU $siteOUPath
+    
+    # Chemin complet de l'OU
+    $ouPath = "OU=$departement,$siteOUPath"
+    
+    # Informations sur l'utilisateur
+    $givenName = $entry.Prénom
+    $surname = $entry.Nom
+    $username = $entry.Username
+    $password = $entry.Password
+    $displayName = "$givenName $surname"
+    $email = "$username@ekoloclast.lan"
+    $description = $entry.fonction
+    
+    # Créer l'utilisateur
+    New-ADUser `
+        -Name $displayName `
+        -GivenName $givenName `
+        -Surname $surname `
+        -SamAccountName $username `
+        -UserPrincipalName $email `
+        -Path $ouPath `
+        -AccountPassword (ConvertTo-SecureString $password -AsPlainText -Force) `
+        -Enabled $true `
+        -Description $description `
+        -OfficePhone $entry.'Téléphone fixe' `
+        -MobilePhone $entry.'Téléphone portable' `
+        -EmailAddress $email `
+        -ChangePasswordAtLogon $false
+}
+
+Write-Host "Tous les utilisateurs ont été créés avec succès."
+
