@@ -1,6 +1,6 @@
-## 3.1.1. Nous avons à disposition un fichier excel avec les informations des départements, des utilisateurs etc... La première étapé sera de convertir le fichier xlsx en fichier csv pour cela nous allons utilisé Python 3.
+### 3.1.1. Nous avons à disposition un fichier excel avec les informations des départements, des utilisateurs etc... La première étapé sera de convertir le fichier xlsx en fichier csv pour cela nous allons utilisé Python 3.
 
-### 1. Installer les bibliothèques nécessaires
+#### 1. Installer les bibliothèques nécessaires
 
 Ouvrez le terminal et exécutez les commandes suivantes pour installer `pandas` et `openpyxl` :
 
@@ -8,7 +8,7 @@ Ouvrez le terminal et exécutez les commandes suivantes pour installer `pandas` 
 pip3 install pandas openpyxl
 ```
 
-### 2. Créer le script Python
+#### 2. Créer le script Python
 
 Utilisez votre éditeur de texte préféré (par exemple, `nano`, `vim`, ou tout autre éditeur de votre choix) pour créer un nouveau fichier pour le script Python. Par exemple, avec `nano` :
 
@@ -16,7 +16,7 @@ Utilisez votre éditeur de texte préféré (par exemple, `nano`, `vim`, ou tout
 nano convert_xlsx_to_csv.py
 ```
 
-### 3. Copier le script Python
+#### 3. Copier le script Python
 
 Copiez et collez le script Python suivant dans votre éditeur :
 
@@ -41,7 +41,7 @@ Remplacez `"path/to/your/file.xlsx"` par le chemin de votre fichier XLSX et `"pa
 
 Pour enregistrer et quitter `nano`, appuyez sur `Ctrl + X`, puis `Y` pour confirmer et `Enter` pour sauvegarder.
 
-### 4. Exécuter le script
+#### 4. Exécuter le script
 
 Retournez dans le terminal et exécutez le script :
 
@@ -53,7 +53,7 @@ Assurez-vous que vous êtes dans le bon répertoire où se trouve votre script P
 
 En suivant ces étapes, vous devriez pouvoir convertir votre fichier XLSX en CSV directement depuis un terminal.
 
-3.1.2
+### 3.1.2
 
 Nous allons vérifier que le fichier CSV est bien lisible, Ce script PowerShell est conçu pour lire les données d'un fichier CSV, afficher ces données, et les stocker potentiellement dans un dictionnaire pour un traitement ultérieur. Voici une explication détaillée de chaque section du script :
 
