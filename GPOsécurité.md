@@ -1,5 +1,3 @@
-Voici les étapes à suivre pour configurer les GPOs (Group Policy Objects) mentionnées dans un Active Directory configuré en français :
-
 ### 1. Politique de mot de passe (complexité, longueur, etc.)
 
 1. Ouvrez la console de gestion des stratégies de groupe (GPMC).
