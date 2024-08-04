@@ -1,4 +1,6 @@
-Pour remplir les objectifs de création d'une VM client sur le domaine Active Directory (AD) avec un compte utilisateur ayant un accès SSH sur le serveur Linux, voici les étapes à suivre :
+Création d'une VM client
+ - Sur le domaine AD
+ - Avec un compte utilisateur ayant un accès SSH sur le serveur Linux
 
 ### 1. Préparation de l'Infrastructure
 
