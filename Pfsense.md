@@ -1,5 +1,7 @@
 PfSense est une distribution open-source basée sur FreeBSD, spécialisée dans la création de pare-feu et de routeurs. Utilisée principalement pour sécuriser et gérer des réseaux, elle offre une interface web conviviale pour configurer des fonctionnalités avancées comme le filtrage de paquets, la traduction d'adresses réseau (NAT), la gestion de VPN, la détection d'intrusions, et bien plus encore. pfSense est réputée pour sa robustesse, sa flexibilité, et sa capacité à remplacer des équipements réseau coûteux, tout en restant accessible pour les petites entreprises, les professionnels et les utilisateurs expérimentés.
 
+Vous pouvez vous aider du tutoriel suivante : https://www.youtube.com/watch?v=NzVDjNqchoc
+
 ## Installation Pfsense
 
 Installer pfSense sur VirtualBox est une excellente manière de créer un pare-feu ou un routeur virtuel pour expérimenter ou configurer un réseau. Voici les étapes à suivre pour l'installer :
