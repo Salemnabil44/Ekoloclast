@@ -39,7 +39,7 @@ Installer pfSense sur VirtualBox est une excellente manière de créer un pare-f
       - Lorsque vous êtes invité à partitionner le disque, choisissez "Auto (UFS)" ou "Auto (ZFS)" selon vos préférences.
       - Une fois l'installation terminée, retirez l'ISO (via le menu "Périphériques > Lecteur optique > Retirer le disque de l'invité" dans VirtualBox) et redémarrez la machine.
 
-## Configuration Pfsense Firewall
+## Configuration Pfsense 
 
 ### 6. **Configurer pfSense**
    - Après le redémarrage, pfSense détectera et configurera automatiquement les interfaces réseau. Vous devrez attribuer les interfaces WAN et LAN :
