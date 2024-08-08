@@ -56,6 +56,7 @@ Installer pfSense sur VirtualBox est une excellente manière de créer un pare-f
 Lorsque vous avez configuré pfSense, l'adresse IP attribuée à l'interface LAN est la suivante 192.168.0.1. Elle devient la passerelle par défaut pour tout appareil connecté au réseau LAN interne.
 
 2. Configurer la passerelle par défaut sur les serveurs ou machines virtuelles
+
 Sous Windows :
 Allez dans Panneau de configuration > Réseau et Internet > Centre Réseau et partage > Modifier les paramètres de la carte.
 Faites un clic droit sur l'interface réseau correspondant à votre connexion LAN et choisissez Propriétés.
@@ -64,11 +65,17 @@ Cochez Utiliser l'adresse IP suivante et entrez une adresse IP statique dans la 
 Pour la passerelle par défaut, entrez l'adresse IP du LAN de pfSense 192.168.0.1.
 Pour les serveurs DNS, vous pouvez également entrer l'adresse de pfSense ou celle des serveurs DNS publics comme Google (8.8.8.8).
 
+<img width="294" alt="Capture d’écran 2024-08-08 à 15 23 08" src="https://github.com/user-attachments/assets/ec955fc3-f6b3-4ffb-8360-1e895e1cad36">
+
+
 Sous Linux :
 Ouvrez un terminal.
 Modifiez le fichier de configuration réseau (par exemple /etc/network/interfaces sous Debian/Ubuntu, ou /etc/sysconfig/network-scripts/ifcfg-eth0 sous CentOS/RHEL).
 Ajoutez ou modifiez la ligne GATEWAY=192.168.0.1 avec l'adresse IP du LAN de pfSense.
 Redémarrez le service réseau avec sudo systemctl restart networking (Debian/Ubuntu) ou sudo systemctl restart network (CentOS/RHEL).
+
+<img width="591" alt="Capture d’écran 2024-08-08 à 15 23 29" src="https://github.com/user-attachments/assets/80d5c04f-7a5b-4921-96bc-fc83385d1d8d">
+
 
 ### 8. **Accéder à l'interface Web de pfSense**
    - Pour configurer pfSense via une interface graphique, ouvrez un navigateur web sur une autre machine virtuelle connectée au réseau interne ou sur votre hôte.
