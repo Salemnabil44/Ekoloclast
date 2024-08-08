@@ -32,13 +32,14 @@ Installer pfSense sur VirtualBox est une excellente manière de créer un pare-f
 
 ### 5. **Démarrer la machine virtuelle et installer pfSense**
    1. Cliquez sur **Démarrer** pour lancer la machine virtuelle.
+   
    2. Suivez les instructions à l'écran pour installer pfSense :
       - Appuyez sur "Enter" pour démarrer l'installation.
       - Choisissez "Install" dans le menu de démarrage.
       - Sélectionnez votre configuration clavier.
       - Lorsque vous êtes invité à partitionner le disque, choisissez "Auto (UFS)" ou "Auto (ZFS)" selon vos préférences.
       - Une fois l'installation terminée, retirez l'ISO (via le menu "Périphériques > Lecteur optique > Retirer le disque de l'invité" dans VirtualBox) et redémarrez la machine.
-
+Attention : Peu importe la configuration que vous choisissez pour le clavier, celui-ci sera en QWERTY.
 ## Configuration Pfsense 
 
 ### 6. **Configurer pfSense**
