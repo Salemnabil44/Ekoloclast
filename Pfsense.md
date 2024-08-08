@@ -65,8 +65,7 @@ Cochez Utiliser l'adresse IP suivante et entrez une adresse IP statique dans la 
 Pour la passerelle par défaut, entrez l'adresse IP du LAN de pfSense 192.168.0.1.
 Pour les serveurs DNS, vous pouvez également entrer l'adresse de pfSense ou celle des serveurs DNS publics comme Google (8.8.8.8).
 
-<img width="294" alt="Capture d’écran 2024-08-08 à 15 23 08" src="https://github.com/user-attachments/assets/ec955fc3-f6b3-4ffb-8360-1e895e1cad36">
-
+<img width="294" alt="Capture d’écran 2024-08-08 à 15 42 27" src="https://github.com/user-attachments/assets/2868a2f4-92b4-49c4-9f54-7b4fae2569ce">
 
 Sous Linux :
 Ouvrez un terminal.
