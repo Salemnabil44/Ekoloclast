@@ -1,4 +1,4 @@
-pfSense est une distribution open-source basée sur FreeBSD, spécialisée dans la création de pare-feu et de routeurs. Utilisée principalement pour sécuriser et gérer des réseaux, elle offre une interface web conviviale pour configurer des fonctionnalités avancées comme le filtrage de paquets, la traduction d'adresses réseau (NAT), la gestion de VPN, la détection d'intrusions, et bien plus encore. pfSense est réputée pour sa robustesse, sa flexibilité, et sa capacité à remplacer des équipements réseau coûteux, tout en restant accessible pour les petites entreprises, les professionnels et les utilisateurs expérimentés.
+PfSense est une distribution open-source basée sur FreeBSD, spécialisée dans la création de pare-feu et de routeurs. Utilisée principalement pour sécuriser et gérer des réseaux, elle offre une interface web conviviale pour configurer des fonctionnalités avancées comme le filtrage de paquets, la traduction d'adresses réseau (NAT), la gestion de VPN, la détection d'intrusions, et bien plus encore. pfSense est réputée pour sa robustesse, sa flexibilité, et sa capacité à remplacer des équipements réseau coûteux, tout en restant accessible pour les petites entreprises, les professionnels et les utilisateurs expérimentés.
 
 ## Installation Pfsense
 
@@ -13,11 +13,11 @@ Installer pfSense sur VirtualBox est une excellente manière de créer un pare-f
    2. **Nom** : Donnez un nom à votre machine virtuelle, par exemple "pfSense".
    3. **Type** : Sélectionnez "BSD".
    4. **Version** : Choisissez "FreeBSD (64-bit)".
+
+<img width="540" alt="Capture d’écran 2024-08-08 à 14 51 28" src="https://github.com/user-attachments/assets/74ba4b2f-e2d2-43f2-8214-5bf7c52f60c0">
+ 
    5. **Mémoire** : Allouez au moins 1 Go de RAM. Vous pouvez augmenter cette valeur en fonction de vos besoins et des ressources de votre système hôte.
-   6. **Disque dur** : Sélectionnez "Créer un disque dur virtuel maintenant", puis cliquez sur "Créer".
-      - Type de fichier du disque dur : Choisissez "VHD (Virtual Hard Disk)".
-      - Stockage : Choisissez "Dynamiquement alloué".
-      - Taille du disque : Choisissez une taille d'au moins 10 Go (vous pouvez ajuster selon vos besoins).
+   6. **Disque dur** : Choisissez une taille d'au moins 10 Go (vous pouvez ajuster selon vos besoins).
 
 ### 3. **Configurer les paramètres réseau**
    - Allez dans les **paramètres** de la machine virtuelle (sélectionnez-la, puis cliquez sur "Configuration").
@@ -46,19 +46,41 @@ Installer pfSense sur VirtualBox est une excellente manière de créer un pare-f
      - **WAN** : Correspond généralement à l'Adaptateur 1 (NAT).
      - **LAN** : Correspond généralement à l'Adaptateur 2 (Réseau Interne).
    - Suivez les instructions pour finaliser la configuration.
-   - Notez l'adresse IP LAN qui sera affichée (généralement quelque chose comme 192.168.1.1).
+   - Configurer l'adresse IP LAN qui sera dans notre projet l'adresse 192.168.0.1 (Voir plan d'adressage en annexe).
 
-### 7. **Accéder à l'interface Web de pfSense**
+<img width="475" alt="Capture d’écran 2024-08-08 à 14 54 43" src="https://github.com/user-attachments/assets/7581b25a-bc59-43f5-8c89-7d45206f42f1">
+
+### 7. Pour que les serveurs ou autres machines virtuelles puissent accéder à Internet via pfSense, il est crucial de configurer la passerelle par défaut sur ces machines.
+
+1. Obtenez l'adresse IP de la passerelle (LAN de pfSense)
+Lorsque vous avez configuré pfSense, l'adresse IP attribuée à l'interface LAN est la suivante 192.168.0.1. Elle devient la passerelle par défaut pour tout appareil connecté au réseau LAN interne.
+
+2. Configurer la passerelle par défaut sur les serveurs ou machines virtuelles
+Sous Windows :
+Allez dans Panneau de configuration > Réseau et Internet > Centre Réseau et partage > Modifier les paramètres de la carte.
+Faites un clic droit sur l'interface réseau correspondant à votre connexion LAN et choisissez Propriétés.
+Sélectionnez Protocole Internet version 4 (TCP/IPv4) et cliquez sur Propriétés.
+Cochez Utiliser l'adresse IP suivante et entrez une adresse IP statique dans la plage du réseau 192.168.0.4, avec un masque de sous-réseau de 255.255.0.0.
+Pour la passerelle par défaut, entrez l'adresse IP du LAN de pfSense 192.168.0.1.
+Pour les serveurs DNS, vous pouvez également entrer l'adresse de pfSense ou celle des serveurs DNS publics comme Google (8.8.8.8).
+
+Sous Linux :
+Ouvrez un terminal.
+Modifiez le fichier de configuration réseau (par exemple /etc/network/interfaces sous Debian/Ubuntu, ou /etc/sysconfig/network-scripts/ifcfg-eth0 sous CentOS/RHEL).
+Ajoutez ou modifiez la ligne GATEWAY=192.168.0.1 avec l'adresse IP du LAN de pfSense.
+Redémarrez le service réseau avec sudo systemctl restart networking (Debian/Ubuntu) ou sudo systemctl restart network (CentOS/RHEL).
+
+### 8. **Accéder à l'interface Web de pfSense**
    - Pour configurer pfSense via une interface graphique, ouvrez un navigateur web sur une autre machine virtuelle connectée au réseau interne ou sur votre hôte.
-   - Tapez l'adresse IP LAN de pfSense dans la barre d'adresse (par exemple, `https://192.168.1.1`).
+   - Tapez l'adresse IP LAN de pfSense dans la barre d'adresse `https://192.168.0.1`.
    - Vous accéderez à l'interface web de pfSense où vous pouvez vous connecter avec les identifiants par défaut :
      - **Utilisateur** : `admin`
      - **Mot de passe** : `pfsense`
 
-### 8. **Configurer et utiliser pfSense**
+### 9. **Configurer et utiliser pfSense**
    - Une fois connecté à l'interface web, vous pouvez commencer à configurer pfSense selon vos besoins : créer des règles de pare-feu, configurer le NAT, gérer les VPN, etc.
 
-### 9. **Sauvegarde et instantanés**
+### 10. **Sauvegarde et instantanés**
    - Une fois la configuration de base effectuée, vous pouvez créer un **instantané** (snapshot) de la machine virtuelle dans VirtualBox, pour pouvoir revenir facilement à cet état en cas de problème.
 
 Et voilà, pfSense est maintenant installé et fonctionnel sur VirtualBox ! Vous pouvez l'utiliser pour gérer et protéger votre réseau virtuel.
