@@ -239,4 +239,10 @@ foreach ($entry in $data) {
 }
 
 Write-Host "Tous les utilisateurs ont été créés avec succès."
+```
+
+En suivant correctement les étapes, vous obtiendrez le résultat suivant : 
+
+<img width="753" alt="Capture d’écran 2024-08-08 à 17 03 31" src="https://github.com/user-attachments/assets/52d3d513-810e-475a-913a-7bff20de5ffe">
+
 
