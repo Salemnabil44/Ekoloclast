@@ -12,11 +12,9 @@ Plan d'adressage IP (IPv4)
 
 Réseau principal : 192.168.0.0/16
 
-Pfsense Pare-feu: 192.168.0.1/24
-router VYOS : 192.168.0.2/24
-serveur AD : 192.168.0.4/24
+Pfsense Routeur et Pare-feu: 192.168.0.1/24
+serveur AD (Dhcp et Dns) : 192.168.0.4/24
 Serveur AD core : 192.168.0.5/24
-Switch 1 : 192.168.0.6/24  (par exemple, Switch Cisco 3650) Sous-réseaux par département (IPv4) Communication
 serveur debian : 192.168.0.7/24
 
 
@@ -68,6 +66,5 @@ Sous-réseau : 2001:db8:abcd:9::/64 Adresses disponibles : 2001:db8:abcd:9::1 à
 
 Sous-réseau : 2001:db8:abcd:a::/64 Adresses disponibles : 2001:db8:abcd:a::1 à 2001:db8:abcd:a:ffff:ffff:ffff Gateway : 2001:db8:abcd:a::1
 
-Configuration IP des matériels réseaux (IPv6) :
 
-Points d'accès Wi-Fi : 2001:db8:abcd::3 Serveurs : Serveur DHCP : 2001:db8:abcd::4 Serveur DNS : 2001:db8:abcd::5 Serveur de fichiers : 2001:db8:abcd::6
+
