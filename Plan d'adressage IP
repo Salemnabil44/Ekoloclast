@@ -12,12 +12,13 @@ Plan d'adressage IP (IPv4)
 
 Réseau principal : 192.168.0.0/16
 
-Pare-feu: 192.168.0.1/16 
-router VYOS : 192.168.0.2/16
-serveur AD : 192.168.0.4/16
-Serveur AD core : 192.168.0.5/16
-Switch 1 : 192.168.0.6/16  (par exemple, Switch Cisco 3650) Sous-réseaux par département (IPv4) Communication
-serveur debian : 192.168.0.7/16
+Pfsense Pare-feu: 192.168.0.1/24
+router VYOS : 192.168.0.2/24
+serveur AD : 192.168.0.4/24
+Serveur AD core : 192.168.0.5/24
+Switch 1 : 192.168.0.6/24  (par exemple, Switch Cisco 3650) Sous-réseaux par département (IPv4) Communication
+serveur debian : 192.168.0.7/24
+
 
 Sous-réseau  192.168.1.0/24 Adresses disponibles : 192.168.1.1 à 192.168.1.254 Gateway : 192.168.1.1 Direction Financière
 
