@@ -42,9 +42,10 @@ Pour créer des étendues DHCP (Dynamic Host Configuration Protocol) sur un serv
       - Vous pouvez configurer les options DHCP directement après avoir créé l'étendue, ou les configurer plus tard. Les options incluent :
       - **Passerelle par défaut** (`Router`): Indiquez l'adresse IP de la passerelle.
 
-<img width="747" alt="Capture d’écran 2024-08-09 à 20 56 24" src="https://github.com/user-attachments/assets/38359f56-3a62-48a4-9717-d056a3bf042f">
-      - **Serveur DNS :** Ajoutez les adresses IP des serveurs DNS que les clients vont utiliser.     
-      - **Nom de domaine :** Indiquez le nom de domaine que les clients doivent utiliser.    
+<img width="747" alt="Capture d’écran 2024-08-09 à 20 56 24" src="https://github.com/user-attachments/assets/38359f56-3a62-48a4-9717-d056a3bf042f">      
+
+   - **Serveur DNS :** Ajoutez les adresses IP des serveurs DNS que les clients vont utiliser.     
+   - **Nom de domaine :** Indiquez le nom de domaine que les clients doivent utiliser.    
 
 <img width="749" alt="Capture d’écran 2024-08-09 à 20 56 57" src="https://github.com/user-attachments/assets/e9a92c5b-7642-474f-9c52-f149b2170f10">
 
