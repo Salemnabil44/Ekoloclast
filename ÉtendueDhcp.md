@@ -50,7 +50,7 @@ Pour créer des étendues DHCP (Dynamic Host Configuration Protocol) sur un serv
 <img width="749" alt="Capture d’écran 2024-08-09 à 20 56 57" src="https://github.com/user-attachments/assets/e9a92c5b-7642-474f-9c52-f149b2170f10">
 
 
-   8. **Activer l'étendue :**
+   7. **Activer l'étendue :**
       - À la fin de l'assistant, vous aurez la possibilité d'activer immédiatement l'étendue. Sélectionnez "Oui, je veux activer cette étendue maintenant" (`Yes, I want to activate this scope now`).
 
 ### 4. **Vérifier et configurer les options avancées (optionnel) :**
